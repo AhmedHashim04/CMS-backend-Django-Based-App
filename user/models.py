@@ -21,6 +21,10 @@ class Employee(models.Model):
     hired_on = models.DateField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
+        base = self.email.split('@')[0].lower()
+        if Employee.objects.filter(slug=base).exists():
+            base = f"{base}-{Employee.objects.filter(email=self.email).count()}"
+        self.slug = base
         super().save(*args, **kwargs)
 
     def __str__(self):

@@ -1,11 +1,8 @@
-from .models import Company, Department, Project, PerformanceReview
-from user.models import Employee
+from .models import Company, Department, Project
 
-from .serializers import CompanySerializer, DepartmentSerializer, ProjectSerializer, PerformanceReviewSerializer
+from .serializers import CompanySerializer, DepartmentSerializer, ProjectSerializer
 
-from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 
 
@@ -50,3 +47,21 @@ class DepartmentViewSet(ListAPIView, RetrieveAPIView):
     lookup_field = 'slug'
 
 
+class ProjectViewSet(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
+    """
+    API view set for managing Project instances.
+
+    Inherits from:
+        - ListAPIView: Provides a read-only endpoint to list all Projects.
+        - RetrieveAPIView: Provides a read-only endpoint to retrieve a single Project by ID.
+        - CreateAPIView: Provides a create endpoint to add a new Project.
+        - RetrieveUpdateDestroyAPIView: Provides endpoints to retrieve, update, or delete an Project.
+
+    Attributes:
+        queryset (QuerySet): All Project objects from the database.
+        serializer_class (Serializer): Serializer class used for Project objects.
+    """
+
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    lookup_field = 'slug'
