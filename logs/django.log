@@ -1,0 +1,24 @@
+[2025-08-27 01:14:42,639] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-27 01:14:43,448] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-27 01:14:43,449] WARNING django.server:213 - "GET /api/employees/ HTTP/1.1" 401 172
+[2025-08-27 01:14:44,182] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-27 01:14:44,183] WARNING django.server:213 - "GET /api/employees/ HTTP/1.1" 401 172
+[2025-08-27 01:14:45,230] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-27 01:14:45,231] WARNING django.server:213 - "GET /api/employees/ HTTP/1.1" 401 172
+[2025-08-27 01:14:55,566] INFO django.server:213 - "POST /api/login/ HTTP/1.1" 200 489
+[2025-08-27 01:15:00,150] INFO django.server:213 - "POST /api/login/ HTTP/1.1" 200 489
+[2025-08-27 01:15:03,238] INFO django.server:213 - "POST /api/login/ HTTP/1.1" 200 489
+[2025-08-27 01:15:18,757] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-27 01:15:18,758] WARNING django.server:213 - "GET /api/employees/ HTTP/1.1" 401 172
+[2025-08-27 01:15:29,616] INFO django.server:213 - "GET /api/employees/ HTTP/1.1" 200 2
+[2025-08-27 01:15:56,854] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/models.py changed, reloading.
+[2025-08-27 01:15:57,766] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-27 01:15:59,333] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/models.py changed, reloading.
+[2025-08-27 01:16:00,301] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-27 01:16:19,027] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/models.py changed, reloading.
+[2025-08-27 01:16:19,930] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-27 01:16:21,413] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/models.py changed, reloading.
+[2025-08-27 01:16:22,084] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-27 01:16:25,285] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/models.py changed, reloading.
+[2025-08-27 01:16:26,455] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-27 01:16:35,193] INFO django.server:213 - "GET /api/employees/ HTTP/1.1" 200 2

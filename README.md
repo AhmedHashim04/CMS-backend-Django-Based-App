@@ -1,22 +1,26 @@
 # Company Management System – Back End
 
---screen
+![Company Management System](image.png)
 
 ## Description
-A back-end Company Management System built with role-based access control, RESTful APIs, and an employee performance review workflow. Supports CRUD operations for companies, departments, employees, and projects. Designed to ensure secure data handling and efficient workflow management.
+
+A robust back-end Company Management System built with Django and Django REST Framework. The system features role-based access control, secure authentication, and a comprehensive employee performance review workflow. It supports CRUD operations for companies, departments, employees, and projects, with RESTful APIs and optional logging for error tracking and application behavior.
 
 ---
 
 ## Table of Contents
+
 - [Features](#features)
+- [Architecture](#architecture)
 - [Data Models](#data-models)
 - [Employee Performance Review Workflow](#employee-performance-review-workflow)
 - [Security & Permissions](#security--permissions)
 - [RESTful API](#restful-api)
 - [Testing](#testing)
-- [Logging (Bonus)](#logging-bonus)
+- [Logging](#logging)
 - [Setup & Installation](#setup--installation)
 - [Usage](#usage)
+- [API Documentation](#api-documentation)
 - [Screenshots](#screenshots)
 - [Checklist](#checklist)
 - [License](#license)
@@ -24,12 +28,25 @@ A back-end Company Management System built with role-based access control, RESTf
 ---
 
 ## Features
+
 - CRUD operations for Companies, Departments, Employees, and Projects
 - Employee performance review workflow with approval stages
 - Role-based access control (Admin, Manager, Employee)
-- Secure authentication & authorization
+- Secure authentication & authorization (JWT)
 - RESTful API for all entities
-- Optional: Logging for error tracking and application behavior
+- API documentation (Swagger & ReDoc)
+- Logging for error tracking and application behavior
+
+---
+
+## Architecture
+
+- **Django**: Web framework for rapid development
+- **Django REST Framework**: For building RESTful APIs
+- **JWT Authentication**: Secure token-based authentication
+- **Modular Apps**: `user`, `company`, `performance_review`
+- **SQLite**: Default database (can be swapped for PostgreSQL/MySQL)
+- **Logging**: Configured for both application and error logs
 
 ---
 
@@ -38,24 +55,24 @@ A back-end Company Management System built with role-based access control, RESTf
 ### User Accounts
 - Username
 - Email Address (Login ID)
-- Role
+- Role (Manager, Employee)
 
 ### Company
-- Company Name
+- Name
 - Number of Departments (auto-calculated)
 - Number of Employees (auto-calculated)
 - Number of Projects (auto-calculated)
 
 ### Department
-- Company (Select)
-- Department Name
+- Company (ForeignKey)
+- Name
 - Number of Employees (auto-calculated)
 - Number of Projects (auto-calculated)
 
 ### Employee
-- Company (Select)
-- Department (Select)
-- Employee Name
+- Company (ForeignKey)
+- Department (ForeignKey)
+- Name
 - Email Address
 - Mobile Number
 - Address
@@ -63,18 +80,28 @@ A back-end Company Management System built with role-based access control, RESTf
 - Hired On (optional)
 - Days Employed (auto-calculated)
 
-### Project (Bonus)
-- Company (Select)
-- Department (Select)
-- Project Name
+### Project
+- Company (ForeignKey)
+- Department (ForeignKey)
+- Name
 - Description
 - Start Date
 - End Date
-- Assigned Employees (Multi-Select)
+- Assigned Employees (Many-to-Many)
+
+### Performance Review
+- Employee (ForeignKey)
+- Stage (workflow status)
+- Scheduled Date
+- Feedback
+- Reviewed By
+- Approved By
+- Created/Updated timestamps
 
 ---
 
 ## Employee Performance Review Workflow
+
 **Stages:**
 1. Pending Review
 2. Review Scheduled
@@ -87,75 +114,66 @@ A back-end Company Management System built with role-based access control, RESTf
 - Pending Review → Review Scheduled
 - Review Scheduled → Feedback Provided
 - Feedback Provided → Under Approval
-- Under Approval → Review Approved
-- Under Approval → Review Rejected
+- Under Approval → Review Approved / Review Rejected
 - Review Rejected → Feedback Provided
 
 ---
 
 ## Security & Permissions
+
 - Role-based access control: Admin, Manager, Employee
-- Secure authentication & authorization (Sessions, Tokens, etc.)
-- Different roles have different levels of access
+- JWT authentication for all endpoints
+- Managers can access their department's data; employees can access their own
+- Secure password storage and validation
 
 ---
 
 ## RESTful API
+
 **Company**
-- GET: Retrieve single company
-- GET: List all companies
+- `GET /api/companies/`: List all companies
+- `GET /api/companies/<slug>/`: Retrieve single company
 
 **Department**
-- GET: Retrieve single department
-- GET: List all departments
+- `GET /api/departments/`: List all departments
+- `GET /api/departments/<slug>/`: Retrieve single department
 
 **Employee**
-- POST: Create new employee
-- GET: Retrieve single employee
-- GET: List all employees
-- PATCH: Update employee
-- DELETE: Delete employee
+- `POST /api/employees/`: Create new employee
+- `GET /api/employees/`: List all employees
+- `GET /api/employees/<slug>/`: Retrieve single employee
+- `PATCH /api/employees/<slug>/`: Update employee
+- `DELETE /api/employees/<slug>/`: Delete employee
 
-**Project (Bonus)**
-- POST: Create new project
-- GET: Retrieve single project
-- GET: List all projects
-- PATCH: Update project
-- DELETE: Delete project
+**Project**
+- `POST /api/projects/`: Create new project
+- `GET /api/projects/`: List all projects
+- `GET /api/projects/<slug>/`: Retrieve single project
+- `PATCH /api/projects/<slug>/`: Update project
+- `DELETE /api/projects/<slug>/`: Delete project
+
+**Performance Review**
+- `GET /api/performance-reviews/`: List all reviews (filtered by role)
+- `POST /api/performance-reviews/`: Create review
+- `PATCH /api/performance-reviews/<id>/transition/`: Transition review stage
+
+**Authentication**
+- `POST /api/register/`: Register new user
+- `POST /api/login/`: Obtain JWT token
+- `POST /api/token/refresh/`: Refresh JWT token
 
 **Notes:**
 - API follows RESTful conventions
 - Handles data securely
-- API documentation provided
+- API documentation provided at `/api/docs/` (Swagger) and `/api/redoc/` (ReDoc)
 
 ---
 
 ## Testing
-- Unit tests for individual components/functions
+
+- Unit tests for models, serializers, and views
 - Integration tests for full application workflow
-
----
-
-## Logging (Bonus)
-- Logging implemented for application behavior and error tracking
-- Logs do not expose sensitive information
-
----
-
-## Setup & Installation
-
-```bash
-# Clone repository
-git clone https://github.com/AhmedHashim04/CMS-backend-Django-Based-App.git
-
-# Navigate into the project directory
-cd CMS-backend-Django-Based-App
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# Start the development server
-python manage.py runserver
+- Run all tests with:
+  ```bash
+  python manage.py test
+````
