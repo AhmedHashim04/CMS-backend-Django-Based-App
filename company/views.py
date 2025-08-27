@@ -73,6 +73,3 @@ class ProjectViewSet(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
     serializer_class = ProjectSerializer
     lookup_field = 'slug'
 
-
-# سير العمل: دورة تقييم أداء الموظف
-# قم بتطوير سير عمل لإدارة دورة تقييم أداء الموظفين، لضمان عملية منظمة للجدولة، جمع الملاحظات، والموافقة.
