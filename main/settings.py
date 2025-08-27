@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "rest_framework",
+    'rest_framework',
     'user',
     'company',
-    "drf_spectacular",
-    "django_extensions",
+    'performance_review',
+    'rest_framework_simplejwt',
+    'drf_spectacular',
+    'django_extensions',
 ]
 AUTH_USER_MODEL = 'user.User'
 

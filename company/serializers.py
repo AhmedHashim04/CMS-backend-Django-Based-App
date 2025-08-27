@@ -1,4 +1,4 @@
-from .models import Company, Department, Project, PerformanceReview
+from .models import Company, Department, Project
 from rest_framework import serializers
 
 class CompanySerializer(serializers.ModelSerializer):
@@ -30,8 +30,3 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = Project
         fields = '__all__'
 
-
-class PerformanceReviewSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PerformanceReview
-        fields = '__all__'
