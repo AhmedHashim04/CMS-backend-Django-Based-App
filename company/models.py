@@ -2,7 +2,7 @@ from django.db import models
 from user.models import Employee
 
 class Company(models.Model):
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
     name = models.CharField(max_length=255,unique=True)
 
     def save(self, *args, **kwargs):
@@ -23,7 +23,7 @@ class Company(models.Model):
 
 
 class Department(models.Model):
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='departments')
     name = models.CharField(max_length=255)
 
@@ -41,7 +41,7 @@ class Department(models.Model):
 
 
 class Project(models.Model):
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='projects')
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='projects')
     name = models.CharField(max_length=255)
@@ -53,3 +53,48 @@ class Project(models.Model):
     def save(self, *args, **kwargs):
         self.slug = self.name.lower() + '-' + self.department.slug + '-' + self.company.slug
         super().save(*args, **kwargs)
+
+
+
+class PerformanceReview(models.Model):
+    class ReviewStatus(models.TextChoices):
+        PENDING = 'pending_review', 'Pending Review'
+        SCHEDULED = 'review_scheduled', 'Review Scheduled'
+        FEEDBACK = 'feedback_provided', 'Feedback Provided'
+        UNDER_APPROVAL = 'under_approval', 'Under Approval'
+        APPROVED = 'review_approved', 'Review Approved'
+        REJECTED = 'review_rejected', 'Review Rejected'
+
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='performance_reviews')
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, blank=True, related_name='performance_reviews')
+
+    scheduled_date = models.DateField(null=True, blank=True)
+    
+    feedback = models.TextField(blank=True)
+
+    status = models.CharField(max_length=20,choices=ReviewStatus.choices,default=ReviewStatus.PENDING)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    _TRANSITIONS = {
+        ReviewStatus.PENDING: [ReviewStatus.SCHEDULED],
+        ReviewStatus.SCHEDULED: [ReviewStatus.FEEDBACK],
+        ReviewStatus.FEEDBACK: [ReviewStatus.UNDER_APPROVAL],
+        ReviewStatus.UNDER_APPROVAL: [ReviewStatus.APPROVED, ReviewStatus.REJECTED],
+        ReviewStatus.APPROVED: [],
+        ReviewStatus.REJECTED: [],
+    }
+
+    def can_transition_to(self, new_status):
+        return new_status in self._TRANSITIONS.get(self.status, [])
+    
+    def transition_status(self, new_status):
+        if self.can_transition_to(new_status):
+            self.status = new_status
+            self.save(update_fields=['status', 'updated_at'])
+            return True
+        return False
+
+    def __str__(self):
+        return f"{self.employee} - {self.get_status_display()}"
+    

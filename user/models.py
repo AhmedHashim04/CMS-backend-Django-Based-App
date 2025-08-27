@@ -1,15 +1,52 @@
 from datetime import date
 from django.db import models
+from django.contrib.auth.models import User
 
-class User(models.Model):
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+
+
+class UserManager(BaseUserManager):
+    def create_user(self, username, email, password=None, role="employee", **extra_fields):
+        if not email:
+            raise ValueError("Users must have an email address")
+        email = self.normalize_email(email)
+        user = self.model(username=username, email=email, role=role, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, username, email, password=None, **extra_fields):
+        user = self.create_user(username, email, password, role="manager", **extra_fields)
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
+        return user
+
+
+class User(AbstractBaseUser, PermissionsMixin):
+    class ROLES(models.TextChoices):
+        MANAGER = 'manager', 'Manager'
+        EMPLOYEE = 'employee', 'Employee'
+
     username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(unique=True)
-    role = models.CharField(max_length=50)
+    role = models.CharField(max_length=50, choices=ROLES.choices)
 
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False) 
+
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username'] 
+
+    def __str__(self):
+        return self.email
 
 class Employee(models.Model):
+    slug = models.SlugField(unique=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employee')
-    slug = models.SlugField(unique=True)
     company = models.ForeignKey('company.Company', on_delete=models.CASCADE, related_name='employees')
     department = models.ForeignKey('company.Department', on_delete=models.CASCADE, related_name='employees')
 
