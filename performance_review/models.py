@@ -19,8 +19,8 @@ class PerformanceReview(models.Model):
     stage = models.CharField(max_length=20, choices=REVIEW_STAGES, default='pending_review')
     scheduled_date = models.DateTimeField(blank=True, null=True)
     feedback = models.TextField(blank=True, null=True)
-    reviewed_by = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviews_conducted',)
-    approved_by = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True,related_name='reviews_approved')
+    reviewed_by = models.ForeignKey(Employee, on_delete=models.SET_NULL,default=None, null=True, blank=True, related_name='reviews_conducted',)
+    approved_by = models.ForeignKey(Employee, on_delete=models.SET_NULL,default=None, null=True, blank=True,related_name='reviews_approved')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

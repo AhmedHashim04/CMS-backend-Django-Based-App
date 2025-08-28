@@ -1,8 +1,19 @@
 # Company Management System – Back End
-![Company Management System](image.png)
 
+Checklist
+- ✅ CRUD for all entities
+- ✅ Role-based access control
+- ✅ JWT authentication
+- ✅ Employee performance review workflow
+- ✅ RESTful API
+- ✅ API documentation
+- ✅ Logging
+- ✅ Unit & integration tests
+
+![Company Management System](image.png)
 ![ERD](MyModels.png)
-![Tests](tests.png)
+![Tests](image-1.png)
+![looging](image-2.png)
 
 ## Description
 
@@ -51,57 +62,6 @@ A robust back-end Company Management System built with Django and Django REST Fr
 - **Logging**: Configured for both application and error logs
 
 ---
-
-## Data Models
-
-### User Accounts
-- Username
-- Email Address (Login ID)
-- Role (Manager, Employee)
-
-### Company
-- Name
-- Number of Departments (auto-calculated)
-- Number of Employees (auto-calculated)
-- Number of Projects (auto-calculated)
-
-### Department
-- Company (ForeignKey)
-- Name
-- Number of Employees (auto-calculated)
-- Number of Projects (auto-calculated)
-
-### Employee
-- Company (ForeignKey)
-- Department (ForeignKey)
-- Name
-- Email Address
-- Mobile Number
-- Address
-- Designation
-- Hired On (optional)
-- Days Employed (auto-calculated)
-
-### Project
-- Company (ForeignKey)
-- Department (ForeignKey)
-- Name
-- Description
-- Start Date
-- End Date
-- Assigned Employees (Many-to-Many)
-
-### Performance Review
-- Employee (ForeignKey)
-- Stage (workflow status)
-- Scheduled Date
-- Feedback
-- Reviewed By
-- Approved By
-- Created/Updated timestamps
-
----
-
 ## Employee Performance Review Workflow
 
 **Stages:**
@@ -187,17 +147,7 @@ Make sure you have the following installed before starting:
 
 ---
 
-## 🚀 1. Clone the Project
-Clone the repository from GitHub:
-
-```bash
-git clone https://github.com/AhmedHashim04/CMS-backend-Django-Based-App.git 
-cd CMS-backend-Django-Based-App
-```
-
----
-
-## ⚙️ 2. Create Virtual Environment
+## ⚙️ 1. Create Virtual Environment
 
 ### ▶ On **Windows**
 ```bash
@@ -209,6 +159,20 @@ venv\Scripts\activate
 ```bash
 python3 -m venv venv
 source venv/bin/activate
+```
+
+---
+
+## 🚀 2. Clone the Project
+Clone the repository from GitHub:
+
+```bash
+git clone https://github.com/AhmedHashim04/CMS-backend-Django-Based-App.git
+mv CMS-backend-Django-Based-App venv
+cd venv
+mv CMS-backend-Django-Based-App src
+cd src
+
 ```
 
 ---
@@ -255,9 +219,9 @@ python manage.py runserver
 
 Visit:
 ```
-http://127.0.0.1:8000/
+http://127.0.0.1:8000/api/docs/
 ```
-
+and u can test all views
 ---
 
 ## 🧪 9. Run Tests
