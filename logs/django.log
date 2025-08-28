@@ -2617,3 +2617,4 @@ AttributeError: 'NoneType' object has no attribute 'name'
 [2025-08-28 09:08:23,586] WARNING django.request:253 - Bad Request: /api/projects/
 [2025-08-28 09:08:36,696] WARNING django.request:253 - Bad Request: /api/projects/
 [2025-08-28 09:08:46,173] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 09:24:12,447] WARNING django.request:253 - Bad Request: /api/projects/

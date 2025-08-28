@@ -50,10 +50,13 @@ def create_departments(companies, num):
         departments.append(department)
     return departments
 
-
 def create_employees(users, companies, departments):
     employees = []
     for user in users:
+        if Employee.objects.filter(user=user).exists():
+            # تخطى لو فيه Employee معمول بالفعل
+            continue
+
         company = random.choice(companies)
         department = random.choice(departments)
 
@@ -62,7 +65,6 @@ def create_employees(users, companies, departments):
             company=company,
             department=department,
             name=fake.name(),
-            email=user.email,
             mobile=fake.phone_number(),
             address=fake.address(),
             position=fake.job(),
@@ -70,7 +72,6 @@ def create_employees(users, companies, departments):
         )
         employees.append(employee)
     return employees
-
 
 
 def create_projects(companies, departments, employees, num):

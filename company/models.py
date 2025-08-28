@@ -48,7 +48,7 @@ class Project(models.Model):
     description = models.TextField()
     start_date = models.DateField()
     end_date = models.DateField()
-    assigned_employees = models.ManyToManyField(Employee, related_name='projects',null=True, blank=True)
+    assigned_employees = models.ManyToManyField(Employee, related_name='projects')
 
     def save(self, *args, **kwargs):
         self.slug = self.name.lower() + '-' + self.department.slug + '-' + self.company.slug

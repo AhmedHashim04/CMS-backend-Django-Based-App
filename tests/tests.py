@@ -113,7 +113,7 @@ def test_retrieve_department(auth_client, department):
 
 # --- Project Tests ---
 @pytest.mark.django_db
-def test_create_project(auth_client, company, department):
+def test_create_project(auth_client, company, employee, department):
     url = reverse('project-list')
     data = {
         "name": "Project Y",
@@ -122,10 +122,10 @@ def test_create_project(auth_client, company, department):
         "department": department.slug,
         "description": "Another project",
         "start_date": "2025-02-01",
-        "end_date": "2025-05-01"
+        "end_date": "2025-05-01",
+        "assigned_employees": [employee.id]
     }
     response = auth_client.post(url, data)
-    print(response.status_code)
 
     assert response.status_code == 201
     assert response.data['name'] == "Project Y"
