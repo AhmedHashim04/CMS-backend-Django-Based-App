@@ -39,6 +39,15 @@ class DepartmentSerializer(serializers.ModelSerializer):
 
 
 class ProjectSerializer(serializers.ModelSerializer):
+    company = serializers.SlugRelatedField(
+        slug_field="slug",
+        queryset=Company.objects.all()
+    )
+    department = serializers.SlugRelatedField(
+        slug_field="slug",
+        queryset=Department.objects.all()
+    )
+
     class Meta:
         model = Project
         fields = '__all__'

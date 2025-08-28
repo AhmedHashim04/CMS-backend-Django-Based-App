@@ -52,22 +52,22 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Employee(models.Model):
     slug = models.SlugField(unique=True, blank=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employee')
-    company = models.ForeignKey('company.Company', on_delete=models.CASCADE, related_name='employees')
-    department = models.ForeignKey('company.Department', on_delete=models.CASCADE, related_name='employees')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employee', null=True, blank=True)
+    company = models.ForeignKey('company.Company', on_delete=models.CASCADE, related_name='employees',null=True, blank=True)
+    department = models.ForeignKey('company.Department', on_delete=models.CASCADE, related_name='employees',null=True, blank=True)
 
     name = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
     mobile = models.CharField(max_length=20)
     address = models.TextField()
     position = models.CharField(max_length=100)
     hired_on = models.DateField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
-        base = self.email.split('@')[0].lower()
-        if Employee.objects.filter(slug=base).exists():
-            base = f"{base}-{Employee.objects.filter(email=self.email).count()}"
-        self.slug = base
+        if self.user and self.user.email:
+            base = self.user.email.split('@')[0].lower()
+            if Employee.objects.filter(slug=base).exists():
+                base = f"{base}-{Employee.objects.filter(user__email=self.user.email).count()}"
+            self.slug = base
         super().save(*args, **kwargs)
 
     def __str__(self):
