@@ -2027,3 +2027,30 @@ AttributeError: 'Employee' object has no attribute 'com'
 [2025-08-28 05:43:21,856] INFO django.server:213 - "GET /api/performance-reviews/ HTTP/1.1" 200 445
 [2025-08-28 05:44:15,127] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/performance_review/views.py changed, reloading.
 [2025-08-28 05:44:16,412] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:50:37,826] WARNING django.request:253 - Unauthorized: /api/companies/
+[2025-08-28 05:50:37,933] WARNING django.request:253 - Unauthorized: /api/companies/test company/
+[2025-08-28 05:50:37,965] WARNING django.request:253 - Unauthorized: /api/departments/
+[2025-08-28 05:50:37,978] WARNING django.request:253 - Unauthorized: /api/departments/hr-test company/
+[2025-08-28 05:50:38,009] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 05:50:39,725] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-28 05:50:40,441] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-28 05:50:41,144] WARNING django.request:253 - Unauthorized: /api/employees/emp1/
+[2025-08-28 05:50:41,849] WARNING django.request:253 - Unauthorized: /api/employees/emp1/
+[2025-08-28 05:50:42,557] WARNING django.request:253 - Unauthorized: /api/employees/emp1/
+[2025-08-28 05:50:43,268] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 05:51:39,934] WARNING django.request:253 - Unauthorized: /api/companies/
+[2025-08-28 05:51:39,996] WARNING django.request:253 - Unauthorized: /api/companies/test company/
+[2025-08-28 05:51:40,012] WARNING django.request:253 - Unauthorized: /api/departments/
+[2025-08-28 05:51:40,039] WARNING django.request:253 - Unauthorized: /api/departments/hr-test company/
+[2025-08-28 05:51:40,055] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 05:51:42,014] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-28 05:51:42,825] WARNING django.request:253 - Unauthorized: /api/employees/
+[2025-08-28 05:51:43,566] WARNING django.request:253 - Unauthorized: /api/employees/emp1/
+[2025-08-28 05:51:44,311] WARNING django.request:253 - Unauthorized: /api/employees/emp1/
+[2025-08-28 05:51:45,016] WARNING django.request:253 - Unauthorized: /api/employees/emp1/
+[2025-08-28 05:58:23,272] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 05:58:28,783] WARNING django.request:253 - Bad Request: /api/employees/
+[2025-08-28 06:00:29,543] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 06:00:35,043] WARNING django.request:253 - Bad Request: /api/employees/
+[2025-08-28 06:01:09,180] WARNING django.request:253 - Bad Request: /api/projects/
+[2025-08-28 06:01:14,776] WARNING django.request:253 - Bad Request: /api/employees/

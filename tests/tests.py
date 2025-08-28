@@ -1,175 +1,216 @@
-from company.views import CompanyViewSet, DepartmentViewSet, ProjectViewSet
-from user.views import EmployeeViewSet
-
 import pytest
 from django.urls import reverse
 from rest_framework.test import APIClient
 from company.models import Company, Department, Project
 from user.models import Employee, User
 
+
+@pytest.fixture(autouse=True)
+def clear_db(db):
+    User.objects.all().delete()
+
+
+# --- Fixtures ---
 @pytest.fixture
 def api_client():
     return APIClient()
 
 @pytest.fixture
-def company():
-    return Company.objects.create(name="Test Company")
+def test_user(db):
+    return User.objects.create_user(username="testuser", email="emp1@example.com", password="password123", role="Admin")
 
 @pytest.fixture
-def department(company):
-    return Department.objects.create(name="HR", company=company)
+def auth_client(api_client, test_user):
+    api_client.force_authenticate(user=test_user)
+    return api_client
 
 @pytest.fixture
-def user():
-    return User.objects.create_user(username="emp1", email="emp1@example.com", password="pass1234", role="Employee")
+def company(db):
+    return Company.objects.create(name="Test Company", slug="test-company")
 
 @pytest.fixture
-def employee(user, company, department):
+def department(db, company):
+    return Department.objects.create(name="HR", slug="hr", company=company)
+
+@pytest.fixture
+def user(db):
+    return User.objects.create_user(
+        username="emp1",
+        email="emp1@example.com",
+        password="pass1234",
+        role="Employee"
+    )
+
+@pytest.fixture
+def employee(db, user, company, department):
     return Employee.objects.create(
         user=user,
         name="Employee One",
         email="emp1@example.com",
         company=company,
-        department=department
+        department=department,
+        slug="employee-one"
     )
 
 @pytest.fixture
-def project(company, department):
+def project(db, company, department):
     return Project.objects.create(
         name="Project X",
+        slug="project-x",
         company=company,
         department=department,
-        description="Test project"
+        description="Test project",
+        start_date="2025-01-01",
+        end_date="2025-12-31",
     )
 
-# --- CompanyViewSet Tests ---
-
-def test_list_companies(api_client, company):
+# --- Company Tests ---
+@pytest.mark.django_db
+def test_list_companies(auth_client, company):
     url = reverse('company-list')
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert company.name in str(response.data)
 
-def test_retrieve_company(api_client, company):
+@pytest.mark.django_db
+def test_retrieve_company(auth_client, company):
     url = reverse('company-detail', args=[company.slug])
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert response.data['name'] == company.name
 
-# --- DepartmentViewSet Tests ---
-
-def test_list_departments(api_client, department):
+# --- Department Tests ---
+@pytest.mark.django_db
+def test_list_departments(auth_client, department):
     url = reverse('department-list')
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert department.name in str(response.data)
 
-def test_retrieve_department(api_client, department):
+@pytest.mark.django_db
+def test_retrieve_department(auth_client, department):
     url = reverse('department-detail', args=[department.slug])
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert response.data['name'] == department.name
 
-# --- ProjectViewSet Tests ---
-
-def test_create_project(api_client, company, department):
+# --- Project Tests ---
+@pytest.mark.django_db
+def test_create_project(auth_client, company, department):
     url = reverse('project-list')
     data = {
         "name": "Project Y",
-        "company": company.id,
-        "department": department.id,
-        "description": "Another project"
+        "slug": "project-y",
+        "company": company.slug,
+        "department": department.slug,
+        "description": "Another project",
+        "start_date": "2025-02-01",
+        "end_date": "2025-05-01"
     }
-    response = api_client.post(url, data)
+    response = auth_client.post(url, data)
     assert response.status_code == 201
     assert response.data['name'] == "Project Y"
 
-def test_list_projects(api_client, project):
+@pytest.mark.django_db
+def test_list_projects(auth_client, project):
     url = reverse('project-list')
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert project.name in str(response.data)
 
-def test_retrieve_project(api_client, project):
+@pytest.mark.django_db
+def test_retrieve_project(auth_client, project):
     url = reverse('project-detail', args=[project.slug])
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert response.data['name'] == project.name
 
-def test_update_project(api_client, project):
+@pytest.mark.django_db
+def test_update_project(auth_client, project):
     url = reverse('project-detail', args=[project.slug])
     data = {"description": "Updated description"}
-    response = api_client.patch(url, data)
+    response = auth_client.patch(url, data)
     assert response.status_code == 200
     assert response.data['description'] == "Updated description"
 
-def test_delete_project(api_client, project):
+@pytest.mark.django_db
+def test_delete_project(auth_client, project):
     url = reverse('project-detail', args=[project.slug])
-    response = api_client.delete(url)
+    response = auth_client.delete(url)
     assert response.status_code == 204
     assert not Project.objects.filter(slug=project.slug).exists()
 
-# --- EmployeeViewSet Tests ---
-
-def test_create_employee(api_client, company, department):
-    user = User.objects.create_user(username="emp2", email="emp2@example.com", password="pass1234", role="Employee")
+# --- Employee Tests ---
+@pytest.mark.django_db
+def test_create_employee(auth_client, company, department):
+    user = User.objects.create_user(
+        username="emp2",
+        email="emp2@example.com",
+        password="pass1234",
+        role="Employee"
+    )
     url = reverse('employee-list')
     data = {
         "user": user.id,
         "name": "Employee Two",
         "email": "emp2@example.com",
         "company": company.id,
-        "department": department.id
+        "department": department.id,
+        "slug": "employee-two"
     }
-    response = api_client.post(url, data)
+    response = auth_client.post(url, data)
     assert response.status_code == 201
     assert response.data['name'] == "Employee Two"
 
-def test_list_employees(api_client, employee):
+@pytest.mark.django_db
+def test_list_employees(auth_client, employee):
     url = reverse('employee-list')
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert employee.name in str(response.data)
 
-def test_retrieve_employee(api_client, employee):
+@pytest.mark.django_db
+def test_retrieve_employee(auth_client, employee):
     url = reverse('employee-detail', args=[employee.slug])
-    response = api_client.get(url)
+    response = auth_client.get(url)
     assert response.status_code == 200
     assert response.data['name'] == employee.name
 
-def test_update_employee(api_client, employee):
+@pytest.mark.django_db
+def test_update_employee(auth_client, employee):
     url = reverse('employee-detail', args=[employee.slug])
     data = {"name": "Employee 1 Updated"}
-    response = api_client.patch(url, data)
+    response = auth_client.patch(url, data)
     assert response.status_code == 200
     assert response.data['name'] == "Employee 1 Updated"
 
-def test_delete_employee(api_client, employee):
+@pytest.mark.django_db
+def test_delete_employee(auth_client, employee):
     url = reverse('employee-detail', args=[employee.slug])
-    response = api_client.delete(url)
+    response = auth_client.delete(url)
     assert response.status_code == 204
     assert not Employee.objects.filter(slug=employee.slug).exists()
 
-# --- Integration Test Example ---
-
-def test_create_project_and_assign_employee(api_client, company, department, employee):
-    # Create a project
+# --- Integration Test ---
+@pytest.mark.django_db
+def test_create_project_and_assign_employee(auth_client, company, department, employee):
     project_data = {
         "name": "Integration Project",
+        "slug": "integration-project",
         "company": company.id,
         "department": department.id,
-        "description": "Integration test project"
+        "description": "Integration test project",
+        "start_date": "2025-03-01",
+        "end_date": "2025-06-01"
     }
-    project_response = api_client.post(reverse('project-list'), project_data)
+    project_response = auth_client.post(reverse('project-list'), project_data)
     assert project_response.status_code == 201
     project_id = project_response.data['id']
 
-    # Assign employee to project (assuming M2M field 'assigned_employees')
     project = Project.objects.get(id=project_id)
     project.assigned_employees.add(employee)
     project.save()
 
-    # Retrieve project and check employee assignment
-    response = api_client.get(reverse('project-detail', args=[project.slug]))
+    response = auth_client.get(reverse('project-detail', args=[project.slug]))
     assert response.status_code == 200
     assert employee.name in [emp['name'] for emp in response.data['assigned_employees']]
