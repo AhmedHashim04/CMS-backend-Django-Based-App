@@ -327,3 +327,89 @@
 [2025-08-28 03:38:51,016] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
 [2025-08-28 03:39:03,393] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
 [2025-08-28 03:39:05,549] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:40:22,294] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:40:24,473] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:45:17,558] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 03:45:18,075] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 72513
+[2025-08-28 03:45:32,183] WARNING django.request:253 - Unauthorized: /api/companies/
+[2025-08-28 03:45:32,184] WARNING django.server:213 - "GET /api/companies/ HTTP/1.1" 401 58
+[2025-08-28 03:47:50,813] INFO django.server:213 - "GET /admin/ HTTP/1.1" 302 0
+[2025-08-28 03:47:51,046] INFO django.server:213 - "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+[2025-08-28 03:47:51,279] INFO django.server:213 - "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+[2025-08-28 03:47:51,283] INFO django.server:213 - "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+[2025-08-28 03:47:51,287] INFO django.server:213 - "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+[2025-08-28 03:47:51,287] INFO django.server:213 - "GET /static/admin/css/login.css HTTP/1.1" 200 951
+[2025-08-28 03:47:51,288] INFO django.server:213 - "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[2025-08-28 03:47:51,313] INFO django.server:213 - "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[2025-08-28 03:47:51,325] INFO django.server:213 - "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+[2025-08-28 03:47:51,529] WARNING django.request:253 - Not Found: /favicon.ico
+[2025-08-28 03:47:51,529] WARNING django.server:213 - "GET /favicon.ico HTTP/1.1" 404 3007
+[2025-08-28 03:47:54,413] INFO django.server:213 - "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4331
+[2025-08-28 03:50:07,391] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:50:24,789] INFO django.server:213 - "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4170
+[2025-08-28 03:50:32,146] INFO django.server:213 - "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2025-08-28 03:50:32,182] INFO django.server:213 - "GET /admin/ HTTP/1.1" 200 10702
+[2025-08-28 03:50:32,308] INFO django.server:213 - "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[2025-08-28 03:50:32,367] INFO django.server:213 - "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[2025-08-28 03:50:32,368] INFO django.server:213 - "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[2025-08-28 03:51:35,342] INFO django.server:213 - "POST /api/register/ HTTP/1.1" 201 58
+[2025-08-28 03:52:15,607] INFO django.server:213 - "POST /api/login/ HTTP/1.1" 200 489
+[2025-08-28 03:52:57,720] WARNING django.request:253 - Unauthorized: /api/companies/
+[2025-08-28 03:52:57,721] WARNING django.server:213 - "GET /api/companies/ HTTP/1.1" 401 107
+[2025-08-28 03:53:00,361] WARNING django.request:253 - Unauthorized: /api/companies/
+[2025-08-28 03:53:00,362] WARNING django.server:213 - "GET /api/companies/ HTTP/1.1" 401 107
+[2025-08-28 03:53:23,819] INFO django.server:213 - "GET /api/companies/ HTTP/1.1" 200 2
+[2025-08-28 03:55:22,731] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:23,308] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:24,633] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:25,072] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:26,427] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:26,934] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:31,386] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:31,899] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:35,148] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:35,674] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:37,911] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:39,044] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:40,539] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:40,956] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:55:42,262] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:55:42,960] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:21,982] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:22,491] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:24,827] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:25,394] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:26,782] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:27,250] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:30,544] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:30,990] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:39,482] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:40,972] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:42,491] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:42,888] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:44,298] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:56:45,121] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:56:55,449] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 03:56:55,752] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 70214
+[2025-08-28 03:57:07,865] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 03:57:08,232] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 70214
+[2025-08-28 03:59:08,268] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:59:08,774] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:59:11,204] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:59:11,678] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:59:15,114] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 03:59:15,407] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 70214
+[2025-08-28 03:59:20,715] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 03:59:21,022] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 70214
+[2025-08-28 03:59:56,018] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 03:59:56,481] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 03:59:57,054] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 03:59:57,474] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 64981
+[2025-08-28 04:00:21,258] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 04:00:21,969] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:00:25,273] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 04:00:25,752] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:02:20,083] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 04:02:20,613] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:20:40,927] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 04:20:52,001] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
