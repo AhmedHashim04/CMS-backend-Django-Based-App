@@ -2,6 +2,9 @@
 
 ![Company Management System](image.png)
 
+![ERD](MyModels.png)
+
+
 ## Description
 
 A robust back-end Company Management System built with Django and Django REST Framework. The system features role-based access control, secure authentication, and a comprehensive employee performance review workflow. It supports CRUD operations for companies, departments, employees, and projects, with RESTful APIs and optional logging for error tracking and application behavior.

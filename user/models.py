@@ -25,6 +25,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     class ROLES(models.TextChoices):
+        ADMIN = 'admin', 'Admin'
         MANAGER = 'manager', 'Manager'
         EMPLOYEE = 'employee', 'Employee'
 
@@ -42,6 +43,12 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+    
+    def save(self, *args, **kwargs):
+        if self.is_superuser: # superuser field from PermissionsMixin
+            self.role = self.ROLES.ADMIN
+
+        super().save(*args, **kwargs)
 
 class Employee(models.Model):
     slug = models.SlugField(unique=True, blank=True)
@@ -71,9 +78,3 @@ class Employee(models.Model):
         if self.hired_on:
             return (date.today() - self.hired_on).days
         return 0
-
-@receiver(post_save, sender=User)
-def create_employee(sender, instance, created, **kwargs):
-    if created and instance.role == User.ROLES.EMPLOYEE:
-        Employee.objects.create(user=instance)
-

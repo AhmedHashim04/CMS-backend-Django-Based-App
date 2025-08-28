@@ -3,7 +3,8 @@ from .models import Company, Department, Project
 from .serializers import CompanySerializer, DepartmentSerializer, ProjectSerializer
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated,IsAdminUser
+from rest_framework import viewsets
 
 
 class CompanyViewSet(ListAPIView, RetrieveAPIView):
@@ -72,4 +73,35 @@ class ProjectViewSet(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     lookup_field = 'slug'
+
+
+
+#admin can CRUD COMPANY / DEPARTMENT / PROJECT
+
+class CompanyAdminViewSet(viewsets.ModelViewSet):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    permission_classes = [IsAdminUser]
+    lookup_field = 'slug'
+
+
+class DepartmentAdminViewSet(viewsets.ModelViewSet):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
+    permission_classes = [IsAdminUser]
+    lookup_field = 'slug'
+
+
+class ProjectAdminViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [IsAdminUser]
+    lookup_field = 'slug'
+
+
+class ProjectAdminViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [IsAdminUser]
+    lookup_field = 'slug'   
 
