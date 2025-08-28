@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from .models import PerformanceReview
 from .serializers import PerformanceReviewSerializer
 
-
 from rest_framework import viewsets, permissions, status
 
 class PerformanceReviewViewSet(viewsets.ModelViewSet):
@@ -12,7 +11,6 @@ class PerformanceReviewViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        # ممكن نفلتر على حسب الـ employee من query params
         employee_slug = self.request.query_params.get('employee_slug')
         queryset = PerformanceReview.objects.all()
         if employee_slug:

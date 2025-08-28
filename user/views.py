@@ -1,10 +1,11 @@
 from .models import Employee, User
 from .serializers import UserRegisterSerializer
-from rest_framework.generics import CreateAPIView, ListCreateAPIView , RetrieveUpdateDestroyAPIView
+from rest_framework.generics import CreateAPIView
 from .serializers import EmployeeSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import viewsets
 
-class EmployeeViewSet(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
+class EmployeeViewSet(viewsets.ModelViewSet):
     """
     API view set for managing Employee instances.
 

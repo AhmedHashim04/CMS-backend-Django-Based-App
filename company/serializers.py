@@ -5,6 +5,15 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = '__all__'
+        swagger_schema_fields = {
+            "example": {
+                "id": 1,
+                "name": "OpenAI",
+                "slug": "openai",
+                "description": "AI research company."
+            }
+        }
+
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         representation['department_count'] = instance.department_count

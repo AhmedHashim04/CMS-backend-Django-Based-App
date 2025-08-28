@@ -2,12 +2,13 @@ from .models import Company, Department, Project
 
 from .serializers import CompanySerializer, DepartmentSerializer, ProjectSerializer
 
-from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated,IsAdminUser
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 
+class CompanyViewSet(mixins.ListModelMixin,
+                     mixins.RetrieveModelMixin,
+                     viewsets.GenericViewSet):
 
-class CompanyViewSet(ListAPIView, RetrieveAPIView):
     """
     API view set for listing and retrieving Company instances.
 
@@ -28,7 +29,22 @@ class CompanyViewSet(ListAPIView, RetrieveAPIView):
     lookup_field = 'slug'
 
 
-class DepartmentViewSet(ListAPIView, RetrieveAPIView):
+class DepartmentViewSet(mixins.ListModelMixin,
+                         mixins.RetrieveModelMixin,
+                         viewsets.GenericViewSet):
+    """
+    API view set for listing and retrieving Department instances.
+
+    Inherits from:
+        - ListAPIView: Provides a read-only endpoint to list all departments.
+        - RetrieveAPIView: Provides a read-only endpoint to retrieve a single department by slug.
+
+    Attributes:
+        queryset (QuerySet): All Department objects from the database.
+        serializer_class (Serializer): Serializer class used for Department objects.
+        permission_classes (list): List of permission classes to apply to the view.
+        lookup_field (str): Field used to lookup Department instances.
+    """
     """
     API view set for listing and retrieving Department instances.
 
@@ -53,7 +69,7 @@ class DepartmentViewSet(ListAPIView, RetrieveAPIView):
     lookup_field = 'slug'
 
 
-class ProjectViewSet(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
+class ProjectViewSet(viewsets.ModelViewSet):
     """
     API view set for managing Project instances.
 
@@ -73,7 +89,6 @@ class ProjectViewSet(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     lookup_field = 'slug'
-
 
 
 #admin can CRUD COMPANY / DEPARTMENT / PROJECT
