@@ -5,9 +5,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('user.urls')),
     path('api/', include('company.urls')),
+    path('api/', include('performance_review.urls')),
 
 
 ]
+
 #documentation
 from drf_spectacular.views import (
     SpectacularAPIView,

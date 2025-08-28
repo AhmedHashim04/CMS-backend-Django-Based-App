@@ -9,23 +9,23 @@ class CompanySerializer(serializers.ModelSerializer):
     employee_count = serializers.SerializerMethodField()
     department_count = serializers.SerializerMethodField()
     project_count = serializers.SerializerMethodField()
-    def get_employee_count(self, obj):
+    def get_employee_count(self, obj) -> int:
         return obj.employee_count 
 
-    def get_department_count(self, obj):
+    def get_department_count(self, obj) -> int:
         return obj.department_count
 
-    def get_project_count(self, obj):
+    def get_project_count(self, obj) -> int:
         return obj.project_count
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
     employee_count = serializers.SerializerMethodField()
     project_count = serializers.SerializerMethodField()
-    def get_employee_count(self, obj):
+    def get_employee_count(self, obj) -> int:
         return obj.employee_count
 
-    def get_project_count(self, obj):
+    def get_project_count(self, obj) -> int:
         return obj.project_count
 
     class Meta:

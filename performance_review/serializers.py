@@ -1,23 +1,37 @@
 from rest_framework import serializers
 from .models import PerformanceReview
-from .serializers import EmployeeSerializer
-
+from user.serializers import EmployeeSerializer
+from user.models import Employee
 class PerformanceReviewSerializer(serializers.ModelSerializer):
-    employee_details = EmployeeSerializer(source='employee', read_only=True)
-    reviewed_by_details = EmployeeSerializer(source='reviewed_by', read_only=True)
-    approved_by_details = EmployeeSerializer(source='approved_by', read_only=True)
-    
+    employee = serializers.SlugRelatedField(
+        queryset=Employee.objects.all(),
+        slug_field='slug'
+    )
+
     class Meta:
         model = PerformanceReview
         fields = '__all__'
         read_only_fields = ['created_at', 'updated_at']
+
     
-    def validate(self, data):
-        # Add validation for stage transitions
-        instance = self.instance
-        if instance and 'stage' in data and data['stage'] != instance.stage:
-            if not instance.can_transition_to(data['stage']):
-                raise serializers.ValidationError(
-                    f"Invalid transition from {instance.stage} to {data['stage']}"
-                )
-        return data
+class PerformanceReviewCreateSerializer(serializers.ModelSerializer):
+    employee = serializers.SlugRelatedField(
+        queryset=Employee.objects.all(),
+        slug_field='slug'
+    )
+    class Meta:
+        model = PerformanceReview
+        fields = [
+            'employee',
+            'stage',
+            'scheduled_date',
+            'feedback',
+            'reviewed_by',
+            'approved_by',
+        ]
+        extra_kwargs = {
+            'feedback': {'required': False, 'allow_null': True, 'allow_blank': True},
+            'scheduled_date': {'required': False, 'allow_null': True},
+            'reviewed_by': {'required': False, 'allow_null': True},
+            'approved_by': {'required': False, 'allow_null': True},
+        }

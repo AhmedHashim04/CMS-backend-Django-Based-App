@@ -1,9 +1,10 @@
 from django.db import models
 from user.models import Employee
-
+import uuid
 from django.core.exceptions import ValidationError
 
 class PerformanceReview(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     REVIEW_STAGES = (
         ('pending_review', 'Pending Review'),
         ('review_scheduled', 'Review Scheduled'),
@@ -18,7 +19,7 @@ class PerformanceReview(models.Model):
     stage = models.CharField(max_length=20, choices=REVIEW_STAGES, default='pending_review')
     scheduled_date = models.DateTimeField(blank=True, null=True)
     feedback = models.TextField(blank=True, null=True)
-    reviewed_by = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviews_conducted')
+    reviewed_by = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviews_conducted',)
     approved_by = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True,related_name='reviews_approved')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

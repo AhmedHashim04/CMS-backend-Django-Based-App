@@ -1,29 +1,6 @@
 from company.views import CompanyViewSet, DepartmentViewSet, ProjectViewSet
 from user.views import EmployeeViewSet
 
-
-    # Task : with pytest
-        # a. Include unit tests to validate individual components and functions.
-        # b. Include integration tests to ensure different parts of the application work together correctly.
-    
-    # i. Company: from CompanyViewSet
-    #     • GET: Retrieve a single company or list all companies
-
-    # ii. Department: from DepartmentViewSet
-    #     • GET: Retrieve a single department or list all departments
-
-    # iii. Project : from ProjectViewSet
-    #     • POST: Create a new project
-    #     • GET: Retrieve a single project or list all projects
-    #     • PATCH: Update an existing project
-    #     • DELETE: Delete a project
-
-    # iv. Employee : from EmployeeViewSet
-    #     • POST: Create a new employee
-    #     • GET: Retrieve a single employee or list all employees
-    #     • PATCH: Update an existing employee
-    #     • DELETE: Delete an employee
-
 import pytest
 from django.urls import reverse
 from rest_framework.test import APIClient

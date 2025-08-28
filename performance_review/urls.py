@@ -1,10 +1,10 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import PerformanceReviewViewSet
+from .views import *
 
-router = routers.DefaultRouter()
-router.register('performance-reviews', PerformanceReviewViewSet, basename='performance-review')
 
 urlpatterns = [
-    path('performance-reviews/', include(router.urls)),
+    path('performance-reviews/', PerformanceReviewListCreateView.as_view(), name='performance-review-list-create'),
+    path('performance-reviews/<uuid:pk>/', PerformanceReviewRetrieveUpdateDestroyView.as_view(), name='performance-review-detail'),
+    path('performance-reviews/<uuid:pk>/transition/', PerformanceReviewTransitionView.as_view(), name='performance-review-transition'),
 ]
