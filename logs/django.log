@@ -413,3 +413,1472 @@
 [2025-08-28 04:02:20,613] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
 [2025-08-28 04:20:40,927] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
 [2025-08-28 04:20:52,001] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:45:02,897] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:46:17,538] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/main/settings.py changed, reloading.
+[2025-08-28 04:48:09,232] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:48:14,053] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 04:48:14,669] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 73675
+[2025-08-28 04:48:18,130] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 04:48:18,467] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 73675
+[2025-08-28 04:48:52,029] WARNING django.request:253 - Bad Request: /api/register/
+[2025-08-28 04:48:52,030] WARNING django.server:213 - "POST /api/register/ HTTP/1.1" 400 56
+[2025-08-28 04:49:03,092] INFO django.server:213 - "POST /api/register/ HTTP/1.1" 201 59
+[2025-08-28 04:49:33,831] WARNING django.request:253 - Unauthorized: /api/login/
+[2025-08-28 04:49:33,832] WARNING django.server:213 - "POST /api/login/ HTTP/1.1" 401 63
+[2025-08-28 04:49:40,233] WARNING django.request:253 - Unauthorized: /api/login/
+[2025-08-28 04:49:40,234] WARNING django.server:213 - "POST /api/login/ HTTP/1.1" 401 63
+[2025-08-28 04:49:46,881] INFO django.server:213 - "POST /api/login/ HTTP/1.1" 200 491
+[2025-08-28 04:50:03,215] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:50:03,219] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 19429
+[2025-08-28 04:50:42,015] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/views.py changed, reloading.
+[2025-08-28 04:50:43,378] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:50:50,562] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:50:50,566] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 19429
+[2025-08-28 04:51:22,418] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:51:23,783] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:51:25,105] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:51:25,114] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 19429
+[2025-08-28 04:51:32,296] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:51:34,517] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:51:34,521] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 19429
+[2025-08-28 04:51:35,674] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:51:35,678] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 19429
+[2025-08-28 04:52:24,189] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:52:25,412] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:52:26,975] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:52:28,012] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:52:39,919] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:52:41,170] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:52:47,980] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:52:49,165] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:52:56,016] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:52:57,255] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:52:59,069] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:00,272] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:02,918] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:04,069] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:07,684] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:08,825] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:10,401] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:11,452] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:13,215] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:14,269] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:18,805] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:19,935] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:28,678] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:29,866] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:32,390] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:33,443] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:36,134] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:37,232] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:38,861] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:53:40,166] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:53:46,912] INFO django.server:213 - "GET /api/docs/ HTTP/1.1" 200 4644
+[2025-08-28 04:53:47,599] INFO django.server:213 - "GET /api/schema/ HTTP/1.1" 200 74881
+[2025-08-28 04:53:54,137] WARNING django.request:253 - Unauthorized: /api/companies/
+[2025-08-28 04:53:54,139] WARNING django.server:213 - "GET /api/companies/ HTTP/1.1" 401 58
+[2025-08-28 04:54:09,953] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+           ^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 13, in get_employees_count
+    return obj.get_employees_count()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Company' object has no attribute 'get_employees_count'. Did you mean: 'employee_count'?
+[2025-08-28 04:54:09,960] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 20544
+[2025-08-28 04:54:21,630] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:54:22,644] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:54:24,500] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/fields.py", line 1869, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CompanySerializer' object has no attribute 'get_employee_count'. Did you mean: 'get_employees_count'?
+[2025-08-28 04:54:24,517] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 20451
+[2025-08-28 04:54:39,851] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:54:41,180] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:54:42,870] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:54:44,235] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:54:53,207] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:54:54,448] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:54:59,333] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:00,535] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:55:02,976] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+           ^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 13, in get_employee_count
+    return obj.get_employee_count()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Company' object has no attribute 'get_employee_count'. Did you mean: 'employee_count'?
+[2025-08-28 04:55:02,993] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 20539
+[2025-08-28 04:55:26,028] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:26,931] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:55:28,522] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:29,666] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:55:32,908] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+           ^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 13, in get_employee_count
+    return obj.employee_count()
+          ^^^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not callable
+[2025-08-28 04:55:32,916] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 20471
+[2025-08-28 04:55:37,859] ERROR django.request:253 - Internal Server Error: /api/companies/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+           ^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 13, in get_employee_count
+    return obj.employee_count()
+          ^^^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not callable
+[2025-08-28 04:55:37,863] ERROR django.server:213 - "GET /api/companies/ HTTP/1.1" 500 20471
+[2025-08-28 04:55:45,992] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:47,286] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:55:51,038] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:52,005] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:55:54,646] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:55,682] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:55:58,252] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:55:59,400] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:56:00,889] INFO django.server:213 - "GET /api/companies/ HTTP/1.1" 200 394
+[2025-08-28 04:56:02,181] INFO django.server:213 - "GET /api/companies/ HTTP/1.1" 200 394
+[2025-08-28 04:56:26,129] INFO django.server:213 - "GET /api/companies/young%2C%20howell%20and%20roth/ HTTP/1.1" 200 130
+[2025-08-28 04:56:29,001] INFO django.server:213 - "GET /api/companies/young%2C%20howell%20and%20roth/ HTTP/1.1" 200 130
+[2025-08-28 04:56:45,539] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:56:46,699] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:57:27,348] ERROR django.request:253 - Internal Server Error: /api/departments/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:57:27,350] ERROR django.server:213 - "GET /api/departments/ HTTP/1.1" 500 19440
+[2025-08-28 04:57:37,471] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:57:39,002] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:57:40,270] ERROR django.request:253 - Internal Server Error: /api/departments/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:57:40,273] ERROR django.server:213 - "GET /api/departments/ HTTP/1.1" 500 19440
+[2025-08-28 04:57:41,848] ERROR django.request:253 - Internal Server Error: /api/departments/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:57:41,855] ERROR django.server:213 - "GET /api/departments/ HTTP/1.1" 500 19440
+[2025-08-28 04:57:46,827] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:57:48,170] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:57:58,950] INFO django.server:213 - "GET /api/departments/ HTTP/1.1" 200 731
+[2025-08-28 04:58:12,505] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:13,760] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:18,517] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:19,497] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:22,145] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:23,359] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:26,651] ERROR django.request:253 - Internal Server Error: /api/departments/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+[2025-08-28 04:58:26,661] ERROR django.server:213 - "GET /api/departments/ HTTP/1.1" 500 19440
+[2025-08-28 04:58:32,345] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:33,484] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:41,373] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:42,653] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:43,422] ERROR django.request:253 - Internal Server Error: /api/departments/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 30, in to_representation
+    representation['employee_count'] = instance.employee.count
+                                       ^^^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'employee'. Did you mean: 'employees'?
+[2025-08-28 04:58:43,426] ERROR django.server:213 - "GET /api/departments/ HTTP/1.1" 500 20165
+[2025-08-28 04:58:45,689] ERROR django.request:253 - Internal Server Error: /api/departments/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 30, in to_representation
+    representation['employee_count'] = instance.employee.count
+                                       ^^^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'employee'. Did you mean: 'employees'?
+[2025-08-28 04:58:45,693] ERROR django.server:213 - "GET /api/departments/ HTTP/1.1" 500 20165
+[2025-08-28 04:58:52,570] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:53,718] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:55,629] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:58:56,850] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:58:59,438] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:00,679] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:03,620] INFO django.server:213 - "GET /api/departments/ HTTP/1.1" 200 953
+[2025-08-28 04:59:10,728] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:12,046] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:13,805] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:15,059] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:20,778] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:21,786] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:24,415] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:25,464] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:38,284] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:39,092] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:42,708] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:43,665] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:47,342] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:48,823] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:51,596] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:52,743] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 04:59:56,425] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 04:59:57,704] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:00,510] INFO django.server:213 - "GET /api/departments/ HTTP/1.1" 200 1091
+[2025-08-28 05:00:20,193] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:21,329] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:24,069] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:25,117] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:27,871] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:28,857] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:31,648] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:33,059] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:35,719] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:36,723] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:40,386] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:41,814] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:46,545] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:47,383] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:51,974] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:53,166] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:54,787] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:00:55,880] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:00:59,508] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:01:00,610] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:01:09,487] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:01:10,470] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:01:14,070] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:01:15,179] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:01:16,847] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:01:18,114] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:01:19,958] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:01:21,159] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:01:22,468] INFO django.server:213 - "GET /api/departments/ HTTP/1.1" 200 1091
+[2025-08-28 05:01:27,386] INFO django.server:213 - "GET /api/departments/ HTTP/1.1" 200 1091
+[2025-08-28 05:01:28,643] INFO django.server:213 - "GET /api/departments/ HTTP/1.1" 200 1091
+[2025-08-28 05:01:42,303] ERROR django.request:253 - Internal Server Error: /api/projects/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 56, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+           ^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/company/serializers.py", line 49, in get_employee_count
+    return obj.employee_count
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Project' object has no attribute 'employee_count'
+[2025-08-28 05:01:42,321] ERROR django.server:213 - "GET /api/projects/ HTTP/1.1" 500 20722
+[2025-08-28 05:02:18,520] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:02:19,777] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:02:20,341] INFO django.server:213 - "GET /api/projects/ HTTP/1.1" 200 4857
+[2025-08-28 05:02:28,578] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:02:29,929] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:02:33,682] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:02:34,796] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:02:39,303] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:02:40,474] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:02:41,577] INFO django.server:213 - "GET /api/projects/ HTTP/1.1" 200 5305
+[2025-08-28 05:04:21,139] INFO django.server:213 - "GET /api/employees/ HTTP/1.1" 200 4438
+[2025-08-28 05:04:48,023] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/company/serializers.py changed, reloading.
+[2025-08-28 05:04:49,418] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:12,862] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:14,217] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:16,022] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:16,864] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:19,332] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:20,436] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:23,047] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:24,023] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:27,723] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:28,865] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:32,491] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:33,789] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:42,806] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:05:43,937] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:05:49,985] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 36, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1146, in get_field_names
+    assert not (fields and exclude), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot set both 'fields' and 'exclude' options on serializer EmployeeSerializer.
+[2025-08-28 05:05:49,989] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21494
+[2025-08-28 05:06:07,603] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:06:08,521] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:06:10,283] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:06:11,349] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:06:16,010] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:06:17,150] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:06:18,978] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:06:20,550] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:06:23,286] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 30, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1146, in get_field_names
+    assert not (fields and exclude), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot set both 'fields' and 'exclude' options on serializer EmployeeSerializer.
+[2025-08-28 05:06:23,303] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21494
+[2025-08-28 05:06:27,060] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 30, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1146, in get_field_names
+    assert not (fields and exclude), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot set both 'fields' and 'exclude' options on serializer EmployeeSerializer.
+[2025-08-28 05:06:27,065] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21494
+[2025-08-28 05:06:29,701] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 30, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1146, in get_field_names
+    assert not (fields and exclude), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot set both 'fields' and 'exclude' options on serializer EmployeeSerializer.
+[2025-08-28 05:06:29,704] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21494
+[2025-08-28 05:06:47,226] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:06:48,400] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:06:50,003] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:06:51,182] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:07:08,172] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:07:09,333] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:07:18,890] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:07:19,856] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:07:23,606] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:07:24,402] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:07:31,092] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:07:32,157] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:07:33,915] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 29, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'project_count' was declared on serializer EmployeeSerializer, but has not been included in the 'fields' option.
+[2025-08-28 05:07:33,931] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21570
+[2025-08-28 05:07:37,629] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 29, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'project_count' was declared on serializer EmployeeSerializer, but has not been included in the 'fields' option.
+[2025-08-28 05:07:37,637] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21570
+[2025-08-28 05:07:45,148] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:07:48,905] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 29, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'project_count' was declared on serializer EmployeeSerializer, but has not been included in the 'fields' option.
+[2025-08-28 05:07:48,911] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21570
+[2025-08-28 05:08:02,150] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:08:03,226] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:08:04,701] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:08:05,499] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:08:18,341] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:08:19,569] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:08:21,179] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 29, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'department_count' was declared on serializer EmployeeSerializer, but has not been included in the 'fields' option.
+[2025-08-28 05:08:21,197] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21576
+[2025-08-28 05:08:22,767] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 29, in to_representation
+    representation = super().to_representation(instance)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'department_count' was declared on serializer EmployeeSerializer, but has not been included in the 'fields' option.
+[2025-08-28 05:08:22,771] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 21576
+[2025-08-28 05:08:36,729] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:08:38,004] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:08:39,979] INFO django.server:213 - "GET /api/employees/ HTTP/1.1" 200 4627
+[2025-08-28 05:08:51,263] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:08:52,228] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:08:54,846] INFO django.utils.autoreload:265 - /home/ahmed/Desktop/cms/src/user/serializers.py changed, reloading.
+[2025-08-28 05:08:56,168] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:08:58,910] ERROR django.request:253 - Internal Server Error: /api/employees/
+Traceback (most recent call last):
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/Desktop/cms/src/user/serializers.py", line 30, in to_representation
+    representation['department'] = instance.department.name
+                            ^^^^^^^^^^^^
+AttributeError: 'Employee' object has no attribute 'com'
+[2025-08-28 05:08:58,917] ERROR django.server:213 - "GET /api/employees/ HTTP/1.1" 500 20116
+[2025-08-28 05:09:03,997] INFO django.utils.autoreload:667 - Watching for file changes with StatReloader
+[2025-08-28 05:09:05,802] INFO django.server:213 - "GET /api/employees/ HTTP/1.1" 200 4972
+[2025-08-28 05:09:15,856] INFO django.server:213 - "GET /api/projects/ HTTP/1.1" 200 5305

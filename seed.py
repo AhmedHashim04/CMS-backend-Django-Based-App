@@ -51,10 +51,9 @@ def create_departments(companies, num):
     return departments
 
 
-def create_employees(users, companies, departments, num):
+def create_employees(users, companies, departments):
     employees = []
-    for _ in range(num):
-        user = random.choice(users)
+    for user in users:
         company = random.choice(companies)
         department = random.choice(departments)
 
@@ -71,6 +70,7 @@ def create_employees(users, companies, departments, num):
         )
         employees.append(employee)
     return employees
+
 
 
 def create_projects(companies, departments, employees, num):
@@ -105,12 +105,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     print("Seeding database...")
-
-    users = create_users(args.employees)  # نفس عدد الموظفين
+    users = create_users(args.employees)
     companies = create_companies(args.companies)
     departments = create_departments(companies, args.departments)
-    employees = create_employees(users, companies, departments, args.employees)
+    employees = create_employees(users, companies, departments)  # ← بدون num
     projects = create_projects(companies, departments, employees, args.projects)
+
+
 
     print(f"✅ Created {len(users)} users, {len(companies)} companies, {len(departments)} departments, {len(employees)} employees, {len(projects)} projects")
 

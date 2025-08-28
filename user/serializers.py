@@ -17,11 +17,15 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         return user
 
 class EmployeeSerializer(serializers.ModelSerializer):
+    
+
     class Meta:
         model = Employee
-        fields = '__all__'
+        fields = ('slug', 'company', 'department', 'name', 'email', 'mobile', 'address', 'position', 'hired_on', )
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         representation['get_days_employed'] = instance.get_days_employed
+        representation['company'] = instance.company.name
+        representation['department'] = instance.department.name
         return representation

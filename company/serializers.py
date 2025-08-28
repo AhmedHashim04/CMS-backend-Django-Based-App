@@ -5,32 +5,36 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = '__all__'
-        swagger_schema_fields = {
-            "example": {
-                "id": 1,
-                "name": "OpenAI",
-                "slug": "openai",
-                "description": "AI research company."
-            }
-        }
 
-    def to_representation(self, instance):
-        representation = super().to_representation(instance)
-        representation['department_count'] = instance.department_count
-        representation['employee_count'] = instance.employees.count
-        representation['project_count'] = instance.project_count
+    employee_count = serializers.SerializerMethodField()
+    department_count = serializers.SerializerMethodField()
+    project_count = serializers.SerializerMethodField()
+    def get_employee_count(self, obj):
+        return obj.employee_count 
 
-        return representation
+    def get_department_count(self, obj):
+        return obj.department_count
+
+    def get_project_count(self, obj):
+        return obj.project_count
+
 
 class DepartmentSerializer(serializers.ModelSerializer):
+    employee_count = serializers.SerializerMethodField()
+    project_count = serializers.SerializerMethodField()
+    def get_employee_count(self, obj):
+        return obj.employee_count
+
+    def get_project_count(self, obj):
+        return obj.project_count
+
     class Meta:
         model = Department
         fields = '__all__'
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
-        representation['employee_count'] = instance.employees.count
-        representation['project_count'] = instance.project_count
+        representation['company'] = instance.company.name
         return representation
 
 
@@ -39,3 +43,9 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = Project
         fields = '__all__'
 
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['company'] = instance.company.name
+        representation['department'] = instance.department.name
+        representation['assigned_employees'] = [employee.name for employee in instance.assigned_employees.all()]
+        return representation

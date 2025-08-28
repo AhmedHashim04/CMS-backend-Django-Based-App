@@ -39,19 +39,6 @@ class DepartmentViewSet(mixins.ListModelMixin,
         - ListAPIView: Provides a read-only endpoint to list all departments.
         - RetrieveAPIView: Provides a read-only endpoint to retrieve a single department by slug.
 
-    Attributes:
-        queryset (QuerySet): All Department objects from the database.
-        serializer_class (Serializer): Serializer class used for Department objects.
-        permission_classes (list): List of permission classes to apply to the view.
-        lookup_field (str): Field used to lookup Department instances.
-    """
-    """
-    API view set for listing and retrieving Department instances.
-
-    Inherits from:
-        - ListAPIView: Provides a read-only endpoint to list all departments.
-        - RetrieveAPIView: Provides a read-only endpoint to retrieve a single department by slug.
-
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     lookup_field = 'slug'
