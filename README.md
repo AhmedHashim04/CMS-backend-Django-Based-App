@@ -171,26 +171,28 @@ This guide explains how to set up and run the project on **Windows** and **Linux
 ## 1️⃣ Clone the Project
 
 ```bash
-git clone https://github.com/AhmedHashim04/CMS-backend-Django-Based-App.git
-mv CMS-backend-Django-Based-App venv
-cd venv
-mv CMS-backend-Django-Based-App src
-cd src
+
+git clone https://github.com/AhmedHashim04/CMS-backend-Django-Based-App.git src
 ```
 
 ---
 
 ## 2️⃣ Create Virtual Environment
 
-**Windows:**
+
 ```bash
 python -m venv venv
-venv\Scripts\activate
+mv src venv
+cd venv
+```
+
+**Windows:**
+```bash
+Scripts\activate
 ```
 
 **Linux/macOS:**
 ```bash
-python3 -m venv venv
 source venv/bin/activate
 ```
 
@@ -267,17 +269,19 @@ chmod +x manage.py
 
 You can run the project using Docker for easier setup and isolation.
 
-### 1. Build Docker Image
+### 1. Remove Existing Container (if any)
 
 ```bash
+
+sudo docker rm -f django-app
+```
+### 2. Build Docker Image
+
+```bash
+cd src
 sudo docker build -t my-django-app .
 ```
 
-### 2. Remove Existing Container (if any)
-
-```bash
-sudo docker rm -f django-app
-```
 
 ### 3. Run Docker Container
 
