@@ -1,22 +1,33 @@
-# Company Management System – Back End
+# Company Management System – Backend
 
-Visit my server IP address: **34.89.210.188**  
-You can access the deployed backend directly.
+Access the deployed backend and API documentation:  
+**[http://34.89.210.188/api/docs/](http://34.89.210.188/api/docs/)**
+
+---
+
+## 🚀 Quick Start
+
+1. **Register** a new user (choose role: admin, manager, or employee).
+2. **Log in** to obtain your JWT token.
+3. In Swagger UI, click **"Authorize"** and paste your token.
+4. Explore and test the API endpoints.
 
 ---
 
-## Checklist
+## ✅ Feature Checklist
 
-- ✅ CRUD for all entities
-- ✅ Role-based access control
-- ✅ JWT authentication
-- ✅ Employee performance review workflow
-- ✅ RESTful API
-- ✅ API documentation
-- ✅ Logging
-- ✅ Unit & integration tests
+- CRUD for all entities
+- Role-based access control
+- JWT authentication
+- Employee performance review workflow
+- RESTful API
+- API documentation (Swagger & ReDoc)
+- Logging
+- Unit & integration tests
 
 ---
+
+## 🖼️ Screenshots
 
 ![Company Management System](image.png)
 ![ERD](MyModels.png)
@@ -25,13 +36,13 @@ You can access the deployed backend directly.
 
 ---
 
-## Description
+## 📚 Overview
 
-A robust back-end Company Management System built with Django and Django REST Framework. The system features role-based access control, secure authentication, and a comprehensive employee performance review workflow. It supports CRUD operations for companies, departments, employees, and projects, with RESTful APIs and optional logging for error tracking and application behavior.
+A robust backend for a Company Management System built with Django and Django REST Framework. Features include role-based access control, secure JWT authentication, and a comprehensive employee performance review workflow. Supports CRUD operations for companies, departments, employees, and projects, with RESTful APIs and logging for error tracking.
 
 ---
 
-## Table of Contents
+## 📑 Table of Contents
 
 - [Features](#features)
 - [Architecture](#architecture)
@@ -45,35 +56,35 @@ A robust back-end Company Management System built with Django and Django REST Fr
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
 - [Screenshots](#screenshots)
-- [Checklist](#checklist)
+- [Checklist](#feature-checklist)
 - [License](#license)
 
 ---
 
-## Features
+## ✨ Features
 
 - CRUD operations for Companies, Departments, Employees, and Projects
 - Employee performance review workflow with approval stages
 - Role-based access control (Admin, Manager, Employee)
-- Secure authentication & authorization (JWT)
+- Secure JWT authentication & authorization
 - RESTful API for all entities
 - API documentation (Swagger & ReDoc)
 - Logging for error tracking and application behavior
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 - **Django**: Web framework for rapid development
 - **Django REST Framework**: For building RESTful APIs
 - **JWT Authentication**: Secure token-based authentication
 - **Modular Apps**: `user`, `company`, `performance_review`
-- **SQLite**: Default database (can be swapped for PostgreSQL/MySQL)
-- **Logging**: Configured for both application and error logs
+- **SQLite**: Default database (easily swappable for PostgreSQL/MySQL)
+- **Logging**: Configured for application and error logs
 
 ---
 
-## Employee Performance Review Workflow
+## 🔄 Employee Performance Review Workflow
 
 **Stages:**
 1. Pending Review
@@ -92,65 +103,63 @@ A robust back-end Company Management System built with Django and Django REST Fr
 
 ---
 
-## Security & Permissions
+## 🔒 Security & Permissions
 
 - Role-based access control: Admin, Manager, Employee
 - JWT authentication for all endpoints
-- Managers can access their department's data; employees can access their own
+- Managers access their department's data; employees access their own
 - Secure password storage and validation
 
 ---
 
-## RESTful API
+## 🌐 RESTful API Endpoints
 
 **Company**
-- `GET /api/companies/`: List all companies
-- `GET /api/companies/<slug>/`: Retrieve single company
+- `GET /api/companies/` — List all companies
+- `GET /api/companies/<slug>/` — Retrieve a company
 
 **Department**
-- `GET /api/departments/`: List all departments
-- `GET /api/departments/<slug>/`: Retrieve single department
+- `GET /api/departments/` — List all departments
+- `GET /api/departments/<slug>/` — Retrieve a department
 
 **Employee**
-- `POST /api/employees/`: Create new employee
-- `GET /api/employees/`: List all employees
-- `GET /api/employees/<slug>/`: Retrieve single employee
-- `PATCH /api/employees/<slug>/`: Update employee
-- `DELETE /api/employees/<slug>/`: Delete employee
+- `POST /api/employees/` — Create employee
+- `GET /api/employees/` — List employees
+- `GET /api/employees/<slug>/` — Retrieve employee
+- `PATCH /api/employees/<slug>/` — Update employee
+- `DELETE /api/employees/<slug>/` — Delete employee
 
 **Project**
-- `POST /api/projects/`: Create new project
-- `GET /api/projects/`: List all projects
-- `GET /api/projects/<slug>/`: Retrieve single project
-- `PATCH /api/projects/<slug>/`: Update project
-- `DELETE /api/projects/<slug>/`: Delete project
+- `POST /api/projects/` — Create project
+- `GET /api/projects/` — List projects
+- `GET /api/projects/<slug>/` — Retrieve project
+- `PATCH /api/projects/<slug>/` — Update project
+- `DELETE /api/projects/<slug>/` — Delete project
 
 **Performance Review**
-- `GET /api/performance-reviews/`: List all reviews (filtered by role)
-- `POST /api/performance-reviews/`: Create review
-- `PATCH /api/performance-reviews/<id>/transition/`: Transition review stage
+- `GET /api/performance-reviews/` — List reviews (filtered by role)
+- `POST /api/performance-reviews/` — Create review
+- `PATCH /api/performance-reviews/<id>/transition/` — Transition review stage
 
 **Authentication**
-- `POST /api/register/`: Register new user
-- `POST /api/login/`: Obtain JWT token
-- `POST /api/token/refresh/`: Refresh JWT token
+- `POST /api/register/` — Register user
+- `POST /api/login/` — Obtain JWT token
+- `POST /api/token/refresh/` — Refresh JWT token
 
-**Notes:**
-- API follows RESTful conventions
-- Handles data securely
-- API documentation provided at `/api/docs/` (Swagger) and `/api/redoc/` (ReDoc)
+> **Note:**  
+> - API follows RESTful conventions  
+> - Handles data securely  
+> - API docs: `/api/docs/` (Swagger), `/api/redoc/` (ReDoc)
 
 ---
 
-# Setup Guide
+# 🛠️ Setup & Installation
 
-This guide explains how to set up and run a Django project on **Windows** and **Linux** step by step.
+This guide explains how to set up and run the project on **Windows** and **Linux**.
 
 ---
 
 ## 📌 Prerequisites
-
-Make sure you have the following installed before starting:
 
 - [Python 3.10+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/downloads)
@@ -159,25 +168,7 @@ Make sure you have the following installed before starting:
 
 ---
 
-## ⚙️ 1. Create Virtual Environment
-
-### ▶ On **Windows**
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### ▶ On **Linux / macOS**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
----
-
-## 🚀 2. Clone the Project
-
-Clone the repository from GitHub:
+## 1️⃣ Clone the Project
 
 ```bash
 git clone https://github.com/AhmedHashim04/CMS-backend-Django-Based-App.git
@@ -189,9 +180,23 @@ cd src
 
 ---
 
-## 📦 3. Install Dependencies
+## 2️⃣ Create Virtual Environment
 
-Install all required Python packages:
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux/macOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install --upgrade pip
@@ -200,17 +205,13 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ 4. Database Setup
+## 4️⃣ Database Setup
 
-### ▶ Default (SQLite)
-
-The project uses **SQLite**, so no extra setup is needed.
+**Default:** Uses SQLite (no extra setup needed).
 
 ---
 
-## 📂 6. Apply Migrations
-
-Run database migrations:
+## 5️⃣ Apply Migrations
 
 ```bash
 python manage.py migrate
@@ -218,7 +219,7 @@ python manage.py migrate
 
 ---
 
-## 👤 7. Create Superuser
+## 6️⃣ Create Superuser
 
 ```bash
 python manage.py createsuperuser
@@ -226,19 +227,19 @@ python manage.py createsuperuser
 
 ---
 
-## 🌐 8. Run Development Server
+## 7️⃣ Run Development Server
 
 ```bash
 python manage.py runserver
 ```
 
 Visit:  
-`http://127.0.0.1:8000/api/docs/`  
-You can test all views here.
+[http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/)  
+Test all endpoints here.
 
 ---
 
-## 🧪 9. Run Tests
+## 8️⃣ Run Tests
 
 ```bash
 pytest
@@ -246,9 +247,7 @@ pytest
 
 ---
 
-## 🗂️ 10. Static & Media Files (Optional)
-
-Collect static files:
+## 9️⃣ Static & Media Files (Optional)
 
 ```bash
 python manage.py collectstatic
@@ -256,13 +255,53 @@ python manage.py collectstatic
 
 ---
 
-## 🔧 11. Extra (Linux Only)
-
-If you face permission issues:
+## 🔧 Linux Permissions (if needed)
 
 ```bash
 chmod +x manage.py
 ```
+
+---
+
+## 🐳 Docker Setup (Optional)
+
+You can run the project using Docker for easier setup and isolation.
+
+### 1. Build Docker Image
+
+```bash
+sudo docker build -t my-django-app .
+```
+
+### 2. Remove Existing Container (if any)
+
+```bash
+sudo docker rm -f django-app
+```
+
+### 3. Run Docker Container
+
+```bash
+sudo docker run -d -p 8000:8000 --name django-app --restart unless-stopped my-django-app
+```
+
+API available at:  
+[http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/)
+
+### 4. Run Migrations (inside container)
+
+```bash
+docker exec -it django-app python manage.py migrate
+```
+
+### 5. Create Superuser (inside container)
+
+```bash
+docker exec -it django-app python manage.py createsuperuser
+```
+
+> **Note:**  
+> Ensure you have a valid `Dockerfile`.
 
 ---
 
@@ -271,13 +310,12 @@ chmod +x manage.py
 1. Clone project  
 2. Create virtual environment  
 3. Install dependencies  
-4. Setup database & env variables  
+4. Setup database & environment variables  
 5. Run migrations  
 6. Create superuser  
 7. Start server 🚀  
+8. (Optional) Use Docker
 
 ---
 
-### 📄 License
-
-No License.
+## 📄 License
