@@ -323,3 +323,5 @@ docker exec -it django-app python manage.py createsuperuser
 ---
 
 ## 📄 License
+
+No License
