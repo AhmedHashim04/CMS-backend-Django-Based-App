@@ -1,6 +1,12 @@
 # Company Management System – Back End
 
-Checklist
+Visit my server IP address: **34.89.210.188**  
+You can access the deployed backend directly.
+
+---
+
+## Checklist
+
 - ✅ CRUD for all entities
 - ✅ Role-based access control
 - ✅ JWT authentication
@@ -10,10 +16,14 @@ Checklist
 - ✅ Logging
 - ✅ Unit & integration tests
 
+---
+
 ![Company Management System](image.png)
 ![ERD](MyModels.png)
 ![Tests](image-1.png)
-![looging](image-2.png)
+![Logging](image-2.png)
+
+---
 
 ## Description
 
@@ -62,6 +72,7 @@ A robust back-end Company Management System built with Django and Django REST Fr
 - **Logging**: Configured for both application and error logs
 
 ---
+
 ## Employee Performance Review Workflow
 
 **Stages:**
@@ -129,7 +140,7 @@ A robust back-end Company Management System built with Django and Django REST Fr
 - Handles data securely
 - API documentation provided at `/api/docs/` (Swagger) and `/api/redoc/` (ReDoc)
 
-
+---
 
 # Setup Guide
 
@@ -138,6 +149,7 @@ This guide explains how to set up and run a Django project on **Windows** and **
 ---
 
 ## 📌 Prerequisites
+
 Make sure you have the following installed before starting:
 
 - [Python 3.10+](https://www.python.org/downloads/)
@@ -164,6 +176,7 @@ source venv/bin/activate
 ---
 
 ## 🚀 2. Clone the Project
+
 Clone the repository from GitHub:
 
 ```bash
@@ -172,12 +185,12 @@ mv CMS-backend-Django-Based-App venv
 cd venv
 mv CMS-backend-Django-Based-App src
 cd src
-
 ```
 
 ---
 
 ## 📦 3. Install Dependencies
+
 Install all required Python packages:
 
 ```bash
@@ -190,13 +203,13 @@ pip install -r requirements.txt
 ## 🛠️ 4. Database Setup
 
 ### ▶ Default (SQLite)
-the project uses **SQLite**, no extra setup is needed.
 
-
+The project uses **SQLite**, so no extra setup is needed.
 
 ---
 
 ## 📂 6. Apply Migrations
+
 Run database migrations:
 
 ```bash
@@ -206,6 +219,7 @@ python manage.py migrate
 ---
 
 ## 👤 7. Create Superuser
+
 ```bash
 python manage.py createsuperuser
 ```
@@ -213,27 +227,29 @@ python manage.py createsuperuser
 ---
 
 ## 🌐 8. Run Development Server
+
 ```bash
 python manage.py runserver
 ```
 
-Visit:
-```
-http://127.0.0.1:8000/api/docs/
-```
-and u can test all views
+Visit:  
+`http://127.0.0.1:8000/api/docs/`  
+You can test all views here.
+
 ---
 
 ## 🧪 9. Run Tests
+
 ```bash
 pytest
-
 ```
 
 ---
 
 ## 🗂️ 10. Static & Media Files (Optional)
+
 Collect static files:
+
 ```bash
 python manage.py collectstatic
 ```
@@ -241,15 +257,17 @@ python manage.py collectstatic
 ---
 
 ## 🔧 11. Extra (Linux Only)
+
 If you face permission issues:
+
 ```bash
 chmod +x manage.py
 ```
 
-
 ---
 
 ## ✅ Summary
+
 1. Clone project  
 2. Create virtual environment  
 3. Install dependencies  
@@ -261,4 +279,5 @@ chmod +x manage.py
 ---
 
 ### 📄 License
+
 No License.
